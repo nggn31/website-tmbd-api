@@ -97,8 +97,211 @@ a {
     margin: 30px;
 }
 
-.css-1:hover { 
-    transform: scale(1.1);
+
+.img-principal-container {
+    width: 100vw; /* Ancho del viewport */
+    overflow: hidden; /* Evita que la imagen se desborde */
+    max-height: 80vh; /* Altura máxima del contenedor */
+}
+
+.img-principal {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de aspecto */
+}
+
+.slider-container{
+    position: absolute;
+    top: 70%;
+    left: 20%;
+    display: flex;
+    background-color: #240046;
+    border-radius: 10px;
+    height: 300px; 
+    width:50%;
+    margin: 0 100px; 
+    overflow: hidden;
+    flex-wrap: wrap;
 }
 
 
+/* Estilo básico para el Slider*/
+#gallery {
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    margin-right: 20px; 
+}
+
+.gallery-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.gallery-item img {
+    right: 0;
+    width: 40%;
+    margin: 0 auto;
+}
+
+/* Navegación del Slider */
+.gallery-navigation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 95%;
+    top: -50px;
+}
+
+.gallery-item {
+    /* Ajustes de estilo para las imágenes */
+    margin: 0 10px;
+}
+
+/* Estilos para la imagen 1 */
+.sidebar-image {
+    position: relative;
+    left: 10%; /* Alinea la imagen con el borde derecho del contenedor del slider */
+    top: 30px; /* Ajusta según sea necesario */
+    width: 100%; /* Ancho de la imagen */
+    height: 80%; /* Altura de la imagen */
+    border-radius: 20px;
+}
+
+/* Estilos para la imagen 2 */
+.sidebar-image2 {
+    position: relative;
+    left: 7%; /* Ajusta según sea necesario */
+    top: 30px; /* Ajusta según sea necesario */
+    width: 100%; /* Ancho de la imagen */
+    height: 80%; /* Altura de la imagen */
+    border-radius: 20px;
+}
+
+/* Estilos para la imagen 3 */
+.sidebar-image3 {
+    position: relative;
+    left: 5%; /* Ajusta según sea necesario */
+    top: 30px; /* Ajusta según sea necesario */
+    width: 100%; /* Ancho de la imagen */
+    height: 80%; /* Altura de la imagen */
+    border-radius: 20px;
+}
+
+.prev{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Ahora puedes usar bottom */
+    background-color: #240046;
+    color: #C77DFF;
+    margin: 0;
+    width: 90px;
+    height: 90px;
+    padding: 30px; 
+    right: 72.3%;
+    bottom: 80px;
+    border-radius: 50px;
+    border:none; 
+    transform: rotate(90deg); /* Rotación de -45 grados */
+    cursor: pointer;
+}
+
+.next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Ahora puedes usar bottom */
+    background-color: #240046;
+    color: #C77DFF;
+    left: 72.6%;
+    bottom: 80px;
+    margin: 0;
+    width: 90px;
+    height: 90px;
+    padding: 30px; 
+    border-radius: 50px; 
+    border:none; 
+    transform: rotate(90deg); /* Rotación de -45 grados */
+    cursor: pointer;
+}
+
+.prev {
+    clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+}
+
+/* Estilos para el botón de la derecha */
+.next {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+}
+
+
+.prev:hover,
+.next:hover{
+    background-color: #008CBA;
+    border-color: #008CBA;
+}
+
+.container-reviews {
+    /* Estilos para tu slider */
+    margin-bottom: 10px; /* Ajusta según sea necesario para dejar espacio para el texto */
+}
+
+.text-container {
+    width: 80%; /* Ancho del contenedor de texto */
+    margin: 0 auto; /* Centra horizontalmente */
+    text-align: center; /* Alinea el texto al centro */
+}
+
+.gallery-container {
+    display: flex;
+}
+
+h1,
+p{
+    color: #ffff;
+}
+
+.content-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.title-and-paragraph {
+    margin-left: 20px; /* Ajusta el margen izquierdo según sea necesario */
+    margin-right: 20px; /* Espacio entre el título/párrafo y la imagen */
+}
+
+.sidebar-image {
+    margin-left: 30px; /* Espacio entre la imagen y el borde del contenedor */
+}
+
+
+.title-and-paragraph i{
+    color: #ffff;
+}
+
+.image-container-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20%;
+}
+
+.image-container{
+    margin-left: 20px;
+    margin-right: -20px; /* Compensación para el margen izquierdo */
+}
+
+
+.image-container img{
+    width: 20%;
+    height: 50%;
+    border-radius: 10px;
+
+}
