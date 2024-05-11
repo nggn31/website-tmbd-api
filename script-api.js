@@ -45,13 +45,9 @@ function showMovies(data){
         const spanEl = document.createElement('span');
         spanEl.textContent = `${vote_average}`;
 
-     
-
         movieEl.appendChild(boxImg);
         movieEl.appendChild(titleEl);
         movieEl.appendChild(spanEl);
-     
-
         
         moviesContainer.appendChild(movieEl);
     });
