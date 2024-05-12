@@ -6,10 +6,8 @@ const searchURL = BASE_URL + '/search/movie?' +API_KEY;
 
 const IMG_URL ='https://image.tmdb.org/t/p/w500';
 
-const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
-
 
 getMovies(API_URL);
 
@@ -52,7 +50,6 @@ function showMovies(data){
         moviesContainer.appendChild(movieEl);
     });
 }
-
 
 function getColor(vote){
     if(vote>= 8){
