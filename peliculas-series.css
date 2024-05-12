@@ -21,6 +21,7 @@
   --text-color:#fff;
   --px: 120px;
   --black-color:#000;
+  --footer-color:#240046;
 }
 
 /*SCROLL BAR*/
@@ -260,6 +261,66 @@ color: red;
   animation: heartBeat 0.5s;
   color: darkred;
 }
+
+/*FOOTER*/
+footer{
+  color: var(--footer-color);
+  background-color: var(--footer-color);
+}
+footer p{
+  color: var(--text-color);
+  max-width: 25em;
+  font-size: 0.9rem;
+  line-height: 23px;
+}
+footer a{
+  color: var(--text-color);
+}
+footer .contaiiner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em;
+}
+.brand{
+  display: block;
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+.media-icons li{
+  display: inline-block;
+  margin: 0.5em 0.5em 0.5em 0;
+}
+.media-icons a{
+  font-size: 1.1em;
+  width: 2em;
+  height: 2em;
+  border: 1px #fff solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.media-icons a:hover{
+  background: var(--main-color);
+  color: var(--paragraph-color);
+}
+.footer4{
+  text-align: center;
+}
+.footer4 .menu li{
+  display: inline-block;
+  margin: 0.7em;
+  text-align: center;
+}
+.footer4 p{
+  margin: 0 auto;
+}
+.footer4 .media-icons{
+  margin: 1.5em 0;
+}
+
 
 
 
