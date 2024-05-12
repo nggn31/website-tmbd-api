@@ -31,12 +31,11 @@ body{
 .menu{
     position: absolute;
     color: #ffff;
-    right: 0;
+    left: 50%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 10px 200px;
-    /* gap: auto; */
 }
 
 
@@ -55,7 +54,7 @@ a {
 }
 
 .menu li {
-    margin-right: 70px;
+    margin-right: 20px;
 }
 
 .menu a {
@@ -167,31 +166,14 @@ a {
 /* Estilos para la imagen 1 */
 .sidebar-image {
     position: relative;
-    left: 10%; /* Alinea la imagen con el borde derecho del contenedor del slider */
+    left: -10%; /* Alinea la imagen con el borde derecho del contenedor del slider */
     top: 30px; /* Ajusta según sea necesario */
-    width: 100%; /* Ancho de la imagen */
-    height: 80%; /* Altura de la imagen */
+    max-width: 20%; /* Evita que la imagen se desborde del contenedor */
+    max-height: 20%; /* Evita que la imagen se desborde del contenedor */
+    width: auto; /* Ajusta el ancho de la imagen automáticamente */
+    height: auto; /* Ajusta la altura de la imagen automáticamente */
     border-radius: 20px;
-}
 
-/* Estilos para la imagen 2 */
-.sidebar-image2 {
-    position: relative;
-    left: 7%; /* Ajusta según sea necesario */
-    top: 30px; /* Ajusta según sea necesario */
-    width: 100%; /* Ancho de la imagen */
-    height: 80%; /* Altura de la imagen */
-    border-radius: 20px;
-}
-
-/* Estilos para la imagen 3 */
-.sidebar-image3 {
-    position: relative;
-    left: 5%; /* Ajusta según sea necesario */
-    top: 30px; /* Ajusta según sea necesario */
-    width: 100%; /* Ancho de la imagen */
-    height: 80%; /* Altura de la imagen */
-    border-radius: 20px;
 }
 
 .prev{
@@ -205,8 +187,8 @@ a {
     width: 90px;
     height: 90px;
     padding: 30px; 
-    right: 72.3%;
-    bottom: 80px;
+    right: 69.7%;
+    bottom: 60px;
     border-radius: 50px;
     border:none; 
     transform: rotate(90deg); /* Rotación de -45 grados */
@@ -220,8 +202,8 @@ a {
     position: absolute; /* Ahora puedes usar bottom */
     background-color: #240046;
     color: #C77DFF;
-    left: 72.6%;
-    bottom: 80px;
+    left: 73.8%;
+    bottom: 60px;
     margin: 0;
     width: 90px;
     height: 90px;
@@ -274,34 +256,59 @@ p{
 }
 
 .title-and-paragraph {
-    margin-left: 20px; /* Ajusta el margen izquierdo según sea necesario */
+    padding: 10px;
+    max-width: 60%;
+    margin-left: 10px; /* Ajusta el margen izquierdo según sea necesario */
     margin-right: 20px; /* Espacio entre el título/párrafo y la imagen */
 }
 
-.sidebar-image {
-    margin-left: 30px; /* Espacio entre la imagen y el borde del contenedor */
-}
+/* .sidebar-image {
+    margin-left: 20px; /* Espacio entre la imagen y el borde del contenedor 
+} */
 
 
 .title-and-paragraph i{
     color: #ffff;
 }
 
-.image-container-wrapper{
-    display: flex;
+.image-with-text {
+    display: flex; /* Activar flexbox */
+    align-items: center; /* Centrar verticalmente los elementos */
+}
+
+.text-container {
+    margin-left: 20%; /* Espacio entre la imagen y el texto */
+    max-width: 30%;
+    margin-top: 10%;
+}
+.text-container h3,
+.text-container p {
+    margin: 0; /* Eliminar los márgenes predeterminados */
+    padding: 10px;
+}
+
+
+.image-container {
+    display: flex; /* Activar flexbox */
+    padding: 20% 100px 50px 50px;
     justify-content: flex-end;
-    margin-top: 20%;
+    padding-right: 20px; /* Espacio entre la imagen y el texto */
 }
 
-.image-container{
-    margin-left: 20px;
-    margin-right: -20px; /* Compensación para el margen izquierdo */
-}
-
-
-.image-container img{
-    width: 20%;
-    height: 50%;
+.image-container img {
+    width: 150px; /* Ancho de las imágenes */
+    height: auto; /* Altura automática para mantener la proporción */
+    margin-right: 10px; /* Espacio entre las imágenes */
     border-radius: 10px;
+}
 
+.image-container img:nth-child(1),
+.image-container img:nth-child(3) {
+    align-self: flex-start; /* Mover hacia arriba */
+    margin-top: 20px; /* Ajustar según sea necesario */
+}
+
+.image-container img:nth-child(1),
+.image-container img:nth-child(3) {
+    margin-top: -25px; /* Ajusta según sea necesario para moverlas hacia arriba */
 }
