@@ -19,6 +19,7 @@
   --title-color: #e0aaff;
   --paragraph-color: #c77dff;
   --text-color:#fff;
+  --px: 120px;
 }
 
 /*SCROLL BAR*/
@@ -132,51 +133,40 @@ a {
 }
 
 
-/*SWIPER*/
-.container {
+/*BANNER*/
+.container{
+  background-color: var(--main-color);
+  margin-bottom: 80px;
+  color: var(--text-color);
+}
+.featured-content{
+  height: 80vh;
+  background-image: linear-gradient(to bottom, rgba(16, 0, 43, 0), rgba(16, 0, 43, 1)), url(img/g1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px;
   width: 100%;
-  min-height: 640px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  background: rgb(2, 3, 7, 0.4);
 }
-.container img {
-  position: absolute;
+.featured-content-serie{
+  height: 80vh;
+  background-image: linear-gradient(to bottom, rgba(16, 0, 43, 0), rgba(16, 0, 43, 1)), url(img/r1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
 }
-.swiper-pagination-bullet {
-  width: 6px !important;
-  height: 6px !important;
-  border-radius: 0.2rem !important;
-  background: var(--text-color) !important;
-  opacity: 1 !important;
+.featured-title{
+  margin-top: 283px;
+  margin-left: 315px;
+  width: 200px;
+  margin-bottom: 10px;
 }
-.swiper-pagination-bullet-active {
-  width: 1.5rem !important;
-  background-color: var(--title-color);
-}
-
-.play {
-  position: absolute;
-  right: 4rem;
-  bottom: 10%;
-}
-.play .bx {
-  background: var(--lines-color);
-  padding: 10px;
-  font-size: 2rem;
-  border-radius: 50%;
-  border: 4px solid rgb(2, 3, 7, 0.4);
-  color: var(--main-color);
-}
-.play .bx:hover {
-  background: var(--main-color);
-  color: var(--lines-color);
-  transition: 0.2s all linear;
+.featured-desc{
+  width: 500px;
+  margin-top: 10px;
+  margin-left: 315px;
+  color: var(--text-color);
+  max-width: 40px 0;
 }
 
 
@@ -219,6 +209,7 @@ a {
 .box span{
   font-size: 13px;
 }
+
 @media(max-width:1080px){
   .home-text{
     padding:0 100px;
