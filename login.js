@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (user) {
         alert("Inicio de sesión exitoso");
         // Aquí puedes redirigir al usuario a otra página o realizar alguna acción adicional
-        window.location.href = "landing.html";
+        window.location.href = "index.html";
         } else {
         alert("Nombre de usuario o contraseña incorrectos");
         }
