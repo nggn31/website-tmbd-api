@@ -3,25 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Series</title>
-    <link rel="stylesheet" href="peliculas-series.css" />
+    <title>Peliculas</title>
+    <link rel="stylesheet" href="/css/peliculas-series.css" />
     <!--BOX ICONS-->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
     />
-
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
   </head>
   <body>
     <!--NAVBAR-->
     <header>
       <div class="name-container">
-        <a href="index.html">Flicker</a>
+        <a href="#">Flicker</a>
       </div>
+    
       <ul class="menu" data-animation="center">
         <li>
           <a href="peliculas.html"> Peliculas </a>
@@ -31,44 +31,40 @@
         </li>
         <li>
           <form id="form">
-            <input
-              type="text"
-              placeholder="Search"
-              id="search"
-              class="search"
-            />
+            <input type="text" placeholder="Search" id="search" class="search">
           </form>
-        </li>
+        </li>        
       </ul>
     </header>
 
     <!--BANNER-->
     <div class="container">
       <div class="content-container">
-        <div class="featured-content-serie">
+        <div class="featured-content">
           <div class="featured-title">
-            <h1>Rick and Morty</h1>
+            <h1>Garfield: fuera de casa</h1>
           </div>
           <div class="featured-desc">
             <p>
-              Nick, un excéntrico científico con problemas alcohólicos, y su
-              nieto Morty, un adolescente amante de las historias de ciencia
-              ficción, participan en peligrosas e insólitas aventuras a través
-              del espacio y de mundos paralelos.
+              Garfield y su amigo canino Odie se ven forzados a abandonar sus
+              perfectas y consentidas vidas al unirse a Vic en un hilarante y
+              muy arriesgado atraco.
             </p>
           </div>
         </div>
       </div>
     </div>
 
-    <!--SERIES-->
+
+
+    <!--MOVIES 2-->
     <h1 class="heading">Lo mas popular</h1>
-    <section class="shows" id="shows">
+    <section class="movies" id="movies">
       <div class="box" id="main"></div>
     </section>
 
-    <!--FOOTER-->
-    <footer class="footer4">
+     <!--FOOTER-->
+     <footer class="footer4">
       <div class="contaiiner">
         <a href="#" class="brand">Flicker</a>
         <p>Sitio web para ver resenas de peliculas.</p>
@@ -101,7 +97,8 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <!--LINK JS-->
-    <script src="script-api-series.js"></script>
+
+    <!--API-->
+    <script src="/JavaScript/script-api.js"></script>
   </body>
 </html>
