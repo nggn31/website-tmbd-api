@@ -155,7 +155,7 @@ a {
 }
 .featured-content{
   height: 80vh;
-  background-image: linear-gradient(to bottom, rgba(16, 0, 43, 0), rgba(16, 0, 43, 1)), url(img/g1.jpg);
+  background-image: linear-gradient(to bottom, rgba(16, 0, 43, 0), rgba(16, 0, 43, 1)), url(../img/g1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 50px;
@@ -163,7 +163,7 @@ a {
 }
 .featured-content-serie{
   height: 80vh;
-  background-image: linear-gradient(to bottom, rgba(16, 0, 43, 0), rgba(16, 0, 43, 1)), url(img/r1.jpg);
+  background-image: linear-gradient(to bottom, rgba(16, 0, 43, 0), rgba(16, 0, 43, 1)), url(../img/r1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 50px;
