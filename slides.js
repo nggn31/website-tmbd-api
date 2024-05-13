@@ -1,5 +1,6 @@
+const moviesContainer = document.querySelector('.movies-container');
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Tu código aquí
     let currentIndex = 0;
 
     document.querySelector('.prev').addEventListener('click', () => {
@@ -32,11 +33,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('form');
     const search = document.getElementById('search');
 
+    
+
     function showMovies(data){
         main.innerHTML= '';
 
         data.forEach(movie => {
             const {title, poster_path, vote_average, overview} = movie;
+
+            // Truncate overview to 80 words (adjust as needed)
+        const words = overview.split(' ');
+        const truncatedOverview = words.slice(0, 80).join(' ') + (words.length > 80 ? '...' : '');
+
 
             const movieElement = document.createElement('div');
             movieElement.classList.add('gallery-item');
@@ -49,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <i class="ri-star-fill"></i>
                         <i class="ri-star-fill"></i>
                         <i class="ri-star-half-line"></i>
-                        <p>${overview}</p>
+                        <p>${truncatedOverview}</p>
                     </div>
                     <img src="${IMG_URL + poster_path}" alt="${title}" class="sidebar-image">    
                 </div>`;
@@ -93,8 +101,73 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             console.log(data.results); // Asegúrate de que los datos sean correctos
             showMovies(data.results);
+            // showMoviesPoster(data.results, IMG_URL);
+            // showFirstMovie(data.results, IMG_URL);
+            showImages(data.results, IMG_URL);
         })
         .catch(error => {
             console.error('Error al obtener películas:', error);
         });
 });
+
+// function showMoviesPoster(data, IMG_URL) {
+//     const categoriesContainer = document.querySelector('.categories-container');
+
+//         data.forEach(movie => {
+
+//             const movieImageUrl = IMG_URL + movie.poster_path;
+
+//             const imageElement = document.createElement('img');
+//             imageElement.src = movieImageUrl;
+//             imageElement.alt = movie.title;
+
+//             categoriesContainer.appendChild(imageElement);    
+//     });
+// }
+
+function showImages(data, IMG_URL) {
+    const seriesImageContainer = document.querySelector('.series-image-container');
+    const moviesImageContainer = document.querySelector('.movies-image-container');
+
+    // Filtrar películas y series
+    const series = data.filter(movie => movie.media_type === 'tv');
+    const movies = data.filter(movie => movie.media_type === 'movie');
+
+    // Tomar la primera serie y película
+    const firstSeries = series[0];
+    const firstMovie = movies[0];
+
+    // Mostrar la imagen de la serie
+    if (firstSeries) {
+        const seriesImageUrl = IMG_URL + firstSeries.poster_path;
+        const seriesImage = document.createElement('img');
+        seriesImage.src = seriesImageUrl;
+        seriesImage.alt = firstSeries.title;
+        seriesImageContainer.appendChild(seriesImage);
+    }
+
+    // Mostrar la imagen de la película
+    if (firstMovie) {
+        const movieImageUrl = IMG_URL + firstMovie.poster_path;
+        const movieImage = document.createElement('img');
+        movieImage.src = movieImageUrl;
+        movieImage.alt = firstMovie.title;
+        moviesImageContainer.appendChild(movieImage);
+    }
+}
+
+
+const preguntas = document.querySelectorAll(".pregunta_encabezado");
+
+preguntas.forEach((pregunta) => {
+	pregunta.addEventListener("click", () => {
+		removerClaseActivo();
+		pregunta.nextElementSibling.classList.add("activo");
+	});
+});
+
+function removerClaseActivo() {
+	preguntas.forEach((pregunta) => {
+		pregunta.nextElementSibling.classList.remove("activo");
+	});
+}
