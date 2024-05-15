@@ -41,9 +41,6 @@ function showMovies(data){
         img.src = `${IMG_URL}${poster_path}`;
         img.alt = title;
 
- 
-       
-
         // Crear un elemento icono para el favorito
         const favIcon = document.createElement('ion-icon');
         favIcon.classList.add('box-fav');
@@ -73,8 +70,7 @@ function showMovies(data){
             starIcon.setAttribute('name', 'star');
             ratingDiv.appendChild(starIcon);
         }
-
-
+        
         // Crear un elemento p para la descripción de la película
         const overviewEl = document.createElement('p');
         overviewEl.textContent = overview;
