@@ -24,13 +24,11 @@ function showTVShows(data) {
 
   showsContainer.innerHTML = ''; // Limpiar el contenedor de películas antes de agregar nuevas películas
 
-// Verificar si data está definido y es un array
-if (data && Array.isArray(data)) {
+
   showsContainer.innerHTML = ''; // Limpiar el contenedor de series antes de agregar nuevas series
 
   data.forEach((show) => {
-    const { title, poster_path, vote_average, overview } = show;
-
+    const {name, poster_path, vote_average, overview} = show;
 
     // Crear un elemento div para la película
     const showEl = document.createElement('div');
@@ -40,7 +38,7 @@ if (data && Array.isArray(data)) {
     const img = document.createElement('img');
     img.classList.add('box-img');
     img.src = `${IMG_URL}${poster_path}`;
-    img.alt = title;
+    img.alt = name;
 
     // Crear un elemento icono para el favorito
     const favIcon = document.createElement('ion-icon');
@@ -59,7 +57,7 @@ if (data && Array.isArray(data)) {
 
     // Crear un elemento h2 para el título de la película
     const titleEl = document.createElement('h2');
-    titleEl.textContent = title;
+    titleEl.textContent = name;
 
     // Crear un elemento div para el rating de la película
     const ratingDiv = document.createElement('div');
@@ -95,11 +93,6 @@ if (data && Array.isArray(data)) {
 
     showsContainer.appendChild(showEl); // Agregar el elemento de película al contenedor de películas
   });
-} else {
-  // Si data no está definido o no es un array, mostrar un mensaje de error
-  console.error('No se encontraron datos de series de televisión o los datos no están en el formato esperado.');
-  // También puedes realizar otras acciones, como mostrar un mensaje al usuario
-}
 }
 
 form.addEventListener('submit', (e) =>{
