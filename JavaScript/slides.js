@@ -1,3 +1,4 @@
+
 const moviesContainer = document.querySelector('.movies-container');
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -32,68 +33,115 @@ document.addEventListener('DOMContentLoaded', function() {
     const main = document.getElementById('main');
     const form = document.getElementById('form');
     const search = document.getElementById('search');
-
     
+// Función para obtener el número de estrellas según el voto promedio
+function getStarRating(voteAverage) {
+    const roundedRating = Math.round(voteAverage) / 2; // Redondear el voto promedio y dividir por 2 para obtener un máximo de 5 estrellas
+    const starCount = Math.floor(roundedRating); // Obtener el número entero de estrellas
+    const halfStar = roundedRating % 1 !== 0; // Verificar si hay media estrella
 
-    function showMovies(data){
-        main.innerHTML= '';
+    let starsHTML = '';
+    for (let i = 0; i < starCount; i++) {
+        starsHTML += '<i class="ri-star-fill"></i>'; // Estrellas completas
+    }
+    if (halfStar) {
+        starsHTML += '<i class="ri-star-half-line"></i>'; // Media estrella si corresponde
+    }
+    return starsHTML;
+}
 
-        data.forEach(movie => {
-            const {title, poster_path, vote_average, overview} = movie;
+    function showMovies(data) {
+        main.innerHTML = '';
+    
+        // Barajar el array de películas
+        const shuffledData = shuffle(data);
+    
+        // Tomar las primeras tres películas
+        const randomMovies = shuffledData.slice(0, 3);
+    
+        randomMovies.forEach(movie => {
+            const { title, poster_path, vote_average, overview } = movie;
+            
+            console.log('Voto promedio:', vote_average); // Verificar el voto promedio
 
-            // Truncate overview to 80 words (adjust as needed)
-        const words = overview.split(' ');
-        const truncatedOverview = words.slice(0, 80).join(' ') + (words.length > 80 ? '...' : '');
-
+            const overviewEl = document.createElement('p');
+            const words = overview.split(/\s+/); // Expresión regular para dividir por espacios en blanco
+            const truncatedOverview = words.slice(0, 55).join(' '); // Tomar solo las primeras 10 palabras
+            overviewEl.textContent = truncatedOverview;
 
             const movieElement = document.createElement('div');
             movieElement.classList.add('gallery-item');
+            const stars = getStarRating(vote_average); // Obtener el número de estrellas según el voto promedio
             movieElement.innerHTML = `
                 <div class="content-container">
                     <div class="title-and-paragraph">
                         <h1>${title}</h1>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-half-line"></i>
+                        ${stars}
                         <p>${truncatedOverview}</p>
                     </div>
                     <img src="${IMG_URL + poster_path}" alt="${title}" class="sidebar-image">    
                 </div>`;
-
-                main.appendChild(movieElement);
+    
+            main.appendChild(movieElement);
         });
-
-        updateSlider(data.slice(0, 3));
+    
+        updateSlider(randomMovies);
     }
-
-    function updateSlider(movies){
+    
+    // Función para barajar un array
+    function shuffle(array) {
+        let currentIndex = array.length, temporaryValue, randomIndex;
+    
+        // Mientras queden elementos a barajar
+        while (0 !== currentIndex) {
+    
+            // Seleccionar un elemento sin barajar
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+    
+            // Intercambiarlo con el elemento actual
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+    
+        return array;
+    }
+    
+    function updateSlider(movies) {
         const galleryContainer = document.querySelector('.gallery-container');
-        //clear existing content
+        // Limpiar contenido existente
         galleryContainer.innerHTML = '';
-
-        movies.forEach(movie =>{
+    
+        movies.forEach(movie => {
+            const { title, overview, poster_path } = movie;
+            const truncatedOverview = truncateText(overview, 50); // Truncar la descripción a 50 palabras
+    
             const figure = document.createElement('figure');
             figure.classList.add('gallery-item');
-
+    
             figure.innerHTML = `
-                <div class= "content-container">
+                <div class="content-container">
                     <div class="title-and-paragraph">
-                        <h1>${movie.title}</h1>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-half-line"></i>
-                        <p>${movie.overview}</p>
+                        <h1>${title}</h1>
+                        ${getStarRating(movie.vote_average)} <!-- Agrega la calificación de estrellas -->
+                        <p>${truncatedOverview}</p>
                     </div>
-                    <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}" class="sidebar-image">
+                    <img src="${IMG_URL}${poster_path}" alt="${title}" class="sidebar-image">
                 </div>`;
-
+    
             galleryContainer.appendChild(figure);
         });
     }
+    
+    // Función para truncar el texto a un número específico de palabras
+    function truncateText(text, limit) {
+        const words = text.split(' '); // Divide el texto en palabras
+        const truncatedWords = words.slice(0, limit); // Toma solo las primeras 'limit' palabras
+        const truncatedText = truncatedWords.join(' '); // Une las palabras nuevamente en un texto truncado
+        return truncatedText;
+    }
+    
 
     // Llama a la función para obtener películas y mostrarlas
     fetch(API_URL)
@@ -109,21 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error al obtener películas:', error);
         });
 });
-
-// function showMoviesPoster(data, IMG_URL) {
-//     const categoriesContainer = document.querySelector('.categories-container');
-
-//         data.forEach(movie => {
-
-//             const movieImageUrl = IMG_URL + movie.poster_path;
-
-//             const imageElement = document.createElement('img');
-//             imageElement.src = movieImageUrl;
-//             imageElement.alt = movie.title;
-
-//             categoriesContainer.appendChild(imageElement);    
-//     });
-// }
 
 function showImages(data, IMG_URL) {
     const seriesImageContainer = document.querySelector('.series-image-container');
