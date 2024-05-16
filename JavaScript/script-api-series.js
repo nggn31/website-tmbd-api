@@ -22,9 +22,6 @@ function getTVShows(url){
 function showTVShows(data) {
   const showsContainer = document.getElementById('shows'); // Obtener el contenedor de películas
 
-  showsContainer.innerHTML = ''; // Limpiar el contenedor de películas antes de agregar nuevas películas
-
-
   showsContainer.innerHTML = ''; // Limpiar el contenedor de series antes de agregar nuevas series
 
   data.forEach((show) => {
@@ -76,7 +73,6 @@ function showTVShows(data) {
     showContent.appendChild(titleEl);
     showContent.appendChild(ratingDiv);
     showContent.appendChild(overviewEl);
-
     showEl.appendChild(img);
     showEl.appendChild(showContent);
 
