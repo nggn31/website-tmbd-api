@@ -22,6 +22,11 @@ body{
     background-color: #10002B;
 }
 
+header  .ri-menu-line{
+    display: none;
+    color: var(--text-color);
+}
+
 .name-container a{
     font-size: 35px;
     color: var(--text-color);
@@ -31,24 +36,28 @@ body{
 .name-container{
     position: absolute;
     top: 0;
-    left: 0;
+    left: 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 200px;
+    padding: 20px ;
 
 }
 
 .menu{
     position: absolute;
     color: var(--text-color);
-    left: 50%;
+    top: 0;
+    left: 70%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 10px 200px;
+    padding: 10px;
 }
 
+#check{
+    display: none;
+}
 
 ul {
     list-style: none;
@@ -109,7 +118,7 @@ a {
 
 
 .img-principal-container {
-    width: 100vw; /* Ancho del viewport */
+    width: 99vw; /* Ancho del viewport */
     overflow: hidden; /* Evita que la imagen se desborde */
     max-height: 80vh; /* Altura máxima del contenedor */
 }
@@ -198,7 +207,7 @@ a {
     width: 90px;
     height: 90px;
     padding: 30px; 
-    right: 69.7%;
+    right: 71.3%;
     bottom: 60px;
     border-radius: 50px;
     border:none; 
@@ -285,7 +294,7 @@ p{
 
 
 .title-and-paragraph i{
-    color: var(--text-color);
+    color: var(--text-color)
 }
 
 .image-with-text {
@@ -499,6 +508,8 @@ footer a{
     margin: 1.5em 0;
 }
 
+
+
 @media (max-width:1920px){
 
     .img-principal-container {
@@ -548,7 +559,7 @@ footer a{
         width: 90px;
         height: 90px;
         padding: 30px; 
-        right: 72.3%;
+        right: 71.3%;
         top: 83%;
         border-radius: 50px;
         border:none; 
