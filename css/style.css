@@ -498,3 +498,521 @@ footer a{
 .footer4 .media-icons{
     margin: 1.5em 0;
 }
+
+@media (max-width:1920px){
+
+    .img-principal-container {
+        width: 100vw; /* Ancho del viewport */
+        overflow: hidden; /* Evita que la imagen se desborde */
+        max-height: 80vh; /* Altura máxima del contenedor */
+    }
+    
+    .img-principal {
+        width: 100%; /* Ocupa todo el ancho del contenedor */
+        height: auto; /* Mantiene la proporción de aspecto */
+    }
+
+    .name-container{
+        position: absolute;
+        top: 0;
+        left: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+    }    
+
+    
+    .slider-container{
+        position: absolute;
+        top: 70%;
+        left: 20%;
+        display: flex;
+        background-color: var(--footer-color);
+        border-radius: 10px;
+        height: 300px; 
+        width:50%;
+        margin: 0 100px; 
+        overflow: hidden;
+        flex-wrap: wrap;
+    }
+
+    .prev{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute; /* Ahora puedes usar bottom */
+        background-color: var(--footer-color);
+        color: var(--paragraph-color);
+        margin: 0;
+        width: 90px;
+        height: 90px;
+        padding: 30px; 
+        right: 72.3%;
+        top: 83%;
+        border-radius: 50px;
+        border:none; 
+        transform: rotate(90deg); /* Rotación de -45 grados */
+        cursor: pointer;
+    }
+    
+    .next{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute; /* Ahora puedes usar bottom */
+        background-color: var(--footer-color);
+        color: var(--paragraph-color);
+        left: 72.7%;
+        top: 83%;
+        margin: 0;
+        width: 90px;
+        height: 90px;
+        padding: 30px; 
+        border-radius: 50px; 
+        border:none; 
+        transform: rotate(90deg); /* Rotación de -45 grados */
+        cursor: pointer;
+    }
+    /* .title-and-paragraph {
+        padding: 10px;
+        max-width: 60%;
+        margin-left: 10px; /* Ajusta el margen izquierdo según sea necesario 
+        margin-right: 20px; /* Espacio entre el título/párrafo y la imagen 
+    } */
+
+    .text-container {
+        color: var(--text-color);
+        margin-left: 20%; /* Espacio entre la imagen y el texto */
+        max-width: 30%;
+        margin-top: 10%;
+    }
+
+    .title-and-paragraph {
+        padding: 20px;
+        max-width: 50%;
+        max-height: 40%;
+        margin-left: -5px; /* Ajusta el margen izquierdo según sea necesario */
+        margin-right: 10px; /* Espacio entre el título/párrafo y la imagen */
+        font-size: 13px;
+    }
+
+    .sidebar-image {
+        position: relative;
+        left: -2%; /* Alinea la imagen con el borde derecho del contenedor del slider */
+        top: 30px; /* Ajusta según sea necesario */
+        max-width: 20%; /* Evita que la imagen se desborde del contenedor */
+        max-height: 20%; /* Evita que la imagen se desborde del contenedor */
+        width: auto; /* Ajusta el ancho de la imagen automáticamente */
+        height: auto; /* Ajusta la altura de la imagen automáticamente */
+        border-radius: 10px;
+    
+    }
+    
+
+    .text-container h3,
+    .text-container p {
+        margin: 0; /* Eliminar los márgenes predeterminados */
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    .image-container {
+        display: flex; /* Activar flexbox */
+        padding: 20% 25px 10px 10px;
+        justify-content: flex-end;
+        padding-right: 20%; /* Espacio entre la imagen y el texto */
+    }
+
+    .image-container img {
+        width: 170px; /* Ancho de las imágenes */
+        height: auto; /* Altura automática para mantener la proporción */
+        margin-right: 5px; /* Espacio entre las imágenes */
+        border-radius: 10px;
+    }
+
+    .containerQA {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        max-width: 40%;
+        margin: auto;
+        margin-top: 90px; /* Agregar margen en la parte superior */;
+        margin-right: 150px;
+    }
+
+    .container-textQA{
+        position: absolute;
+        top: 125rem; /* Este valor se ajustará según tus necesidades */
+        max-width: 30%;
+        margin-left: 20%;
+        align-items: center;
+    }
+}
+
+@media (max-width:1024px){
+
+    .img-principal-container {
+        width: 100vw; /* Ancho del viewport */
+        overflow: hidden; /* Evita que la imagen se desborde */
+        max-height: 80vh; /* Altura máxima del contenedor */
+    }
+    
+    .img-principal {
+        width: 140%; /* Ocupa todo el ancho del contenedor */
+        height: auto; /* Mantiene la proporción de aspecto */
+    }
+
+    .name-container{
+        position: absolute;
+        top: 0;
+        left: -150px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 200px;
+    }    
+
+    
+    .slider-container{
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        display: flex;
+        background-color: var(--footer-color);
+        border-radius: 10px;
+        height: 300px; 
+        width:50%;
+        margin: 0 100px; 
+        overflow: hidden;
+        flex-wrap: wrap;
+    }
+
+    .prev{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute; /* Ahora puedes usar bottom */
+        background-color: var(--footer-color);
+        color: var(--paragraph-color);
+        margin: 0;
+        width: 90px;
+        height: 90px;
+        padding: 30px; 
+        right: 65.4%;
+        top: 58%;
+        border-radius: 50px;
+        border:none; 
+        transform: rotate(90deg); /* Rotación de -45 grados */
+    }
+    
+    .next{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute; /* Ahora puedes usar bottom */
+        background-color: var(--footer-color);
+        color: var(--paragraph-color);
+        left: 75%;
+        top: 58%;
+        margin: 0;
+        width: 90px;
+        height: 90px;
+        padding: 30px; 
+        border-radius: 50px; 
+        border:none; 
+        transform: rotate(90deg); /* Rotación de -45 grados */
+        cursor: pointer;
+    }
+
+    .menu li {
+        margin-right: 10px;
+    }
+
+    .text-container {
+        color: var(--text-color);
+        margin-left: 20%; /* Espacio entre la imagen y el texto */
+        max-width: 30%;
+        margin-top: 30%;
+    }
+
+    .title-and-paragraph {
+        padding: 20px;
+        max-width: 50%;
+        max-height: 40%;
+        margin-left: -5px; /* Ajusta el margen izquierdo según sea necesario */
+        margin-right: 10px; /* Espacio entre el título/párrafo y la imagen */
+        font-size: 13px;
+    }
+
+    .sidebar-image {
+        position: relative;
+        left: -2%; /* Alinea la imagen con el borde derecho del contenedor del slider */
+        top: 30px; /* Ajusta según sea necesario */
+        max-width: 20%; /* Evita que la imagen se desborde del contenedor */
+        max-height: 20%; /* Evita que la imagen se desborde del contenedor */
+        width: auto; /* Ajusta el ancho de la imagen automáticamente */
+        height: auto; /* Ajusta la altura de la imagen automáticamente */
+        border-radius: 10px;
+    
+    }
+    
+
+    .text-container h3,
+    .text-container p {
+        margin: 0; /* Eliminar los márgenes predeterminados */
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    .image-container {
+        display: flex; /* Activar flexbox */
+        padding: 30% 25px 10px 10px;
+        justify-content: flex-end;
+        padding-right: 10px; /* Espacio entre la imagen y el texto */
+    }
+
+    .image-container img {
+        width: 130px; /* Ancho de las imágenes */
+        height: auto; /* Altura automática para mantener la proporción */
+        margin-right: 5px; /* Espacio entre las imágenes */
+        border-radius: 10px;
+    }
+
+    .containerQA {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        max-width: 40%;
+        margin: auto;
+        margin-top: 90px; /* Agregar margen en la parte superior */;
+        margin-right: 20px;
+    }
+
+    .container-textQA{
+        position: absolute;
+        top: 125rem; /* Este valor se ajustará según tus necesidades */
+        max-width: 30%;
+        margin-left: 20%;
+        align-items: center;
+    }
+}
+
+@media (max-width:600px){
+
+    .img-principal-container {
+        width: 115vw; /* Ancho del viewport */
+        overflow: hidden; /* Evita que la imagen se desborde */
+        max-height: 80vh; /* Altura máxima del contenedor */
+    }
+    
+    .img-principal {
+        width: 100%; /* Ocupa todo el ancho del contenedor */
+        height: auto; /* Mantiene la proporción de aspecto */
+    }
+
+    .name-container{
+        position: absolute;
+        top: 0;
+        left: -120px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 200px;
+    }    
+
+    /* MENU RESPONSIVE */
+
+    .menu{
+        display: none;
+    }
+
+    header .ri-menu-line {
+        position: absolute;
+        display: block;
+        color: var(--text-color);
+        font-size: 2rem;
+        left: 90%;
+        top: 30px;
+        text-align: center;
+        transition: all .5s;
+    }
+    
+    .menu ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+
+    }
+
+    .menu ul li a{
+        font-size: 20px;
+    }
+
+    ul{
+        top: 30%
+    }
+
+    li a:hover, li a.active{
+        background: none;
+        color: #e878a2;
+    }
+
+    .checkbtn{
+        display: block;
+    }
+
+    #check:checked ~ .menu {
+        display: block;
+    }
+
+
+
+
+    .slider-container{
+        position: absolute;
+        top: 40%;
+        left: 10%;
+        display: flex;
+        background-color: var(--footer-color);
+        border-radius: 10px;
+        height: 300px; 
+        width:50%;
+        margin: 0 100px; 
+        overflow: hidden;
+        flex-wrap: wrap;
+    }
+
+    .prev{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute; /* Ahora puedes usar bottom */
+        background-color: var(--footer-color);
+        color: var(--paragraph-color);
+        margin: 0;
+        width: 90px;
+        height: 90px;
+        padding: 30px; 
+        right: 65.9%;
+        top: 55%;
+        border-radius: 50px;
+        border:none; 
+        transform: rotate(90deg); /* Rotación de -45 grados */
+        cursor: pointer;
+    }
+    
+    .next{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute; /* Ahora puedes usar bottom */
+        background-color: var(--footer-color);
+        color: var(--paragraph-color);
+        left: 69%;
+        top: 55%;
+        margin: 0;
+        width: 90px;
+        height: 90px;
+        padding: 30px; 
+        border-radius: 50px; 
+        border:none; 
+        transform: rotate(90deg); /* Rotación de -45 grados */
+        cursor: pointer;
+    }
+    /* .title-and-paragraph {
+        padding: 10px;
+        max-width: 60%;
+        margin-left: 10px; /* Ajusta el margen izquierdo según sea necesario 
+        margin-right: 20px; /* Espacio entre el título/párrafo y la imagen 
+    } */
+
+    .text-container {
+        color: var(--text-color);
+        margin-left: 20%; /* Espacio entre la imagen y el texto */
+        max-width: 30%;
+        margin-top: 50%;
+    }
+
+    .title-and-paragraph {
+        padding: 20px;
+        max-width: 50%;
+        max-height: 40%;
+        margin-left: -5px; /* Ajusta el margen izquierdo según sea necesario */
+        margin-right: 20px; /* Espacio entre el título/párrafo y la imagen */
+        font-size: 10px;
+    }
+
+    .sidebar-image {
+        position: relative;
+        left: -10%; /* Alinea la imagen con el borde derecho del contenedor del slider */
+        top: 30px; /* Ajusta según sea necesario */
+        max-width: 20%; /* Evita que la imagen se desborde del contenedor */
+        max-height: 20%; /* Evita que la imagen se desborde del contenedor */
+        width: auto; /* Ajusta el ancho de la imagen automáticamente */
+        height: auto; /* Ajusta la altura de la imagen automáticamente */
+        border-radius: 10px;
+    
+    }
+    
+    
+
+    .text-container h3,
+    .text-container p {
+        margin: 0; /* Eliminar los márgenes predeterminados */
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .image-container {
+        display: flex; /* Activar flexbox */
+        padding: 35% 50px 25px 25px;
+        justify-content: flex-end;
+        padding-right: 20px; /* Espacio entre la imagen y el texto */
+    }
+
+    .image-container img {
+        width: 80px; /* Ancho de las imágenes */
+        height: auto; /* Altura automática para mantener la proporción */
+        margin-right: 10px; /* Espacio entre las imágenes */
+        border-radius: 10px;
+    }
+
+    .containerQA {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        max-width: 40%;
+        margin: auto;
+        margin-top: 90px; /* Agregar margen en la parte superior */;
+        margin-right: 20px;
+    }
+
+    .container-textQA{
+        position: absolute;
+        top: 110rem; /* Este valor se ajustará según tus necesidades */
+        max-width: 30%;
+        margin-left: 20%;
+        align-items: center;
+    }
+
+    footer {
+        padding: 3em; 
+        width:110%;
+    }
+    footer .brand {
+    font-size: 2.5em; 
+    }
+    footer p{
+    font-size: 1.5rem; 
+    }
+
+    footer .media-icons a {
+    font-size: 1.9em; 
+    width: 2.5em; 
+    height: 2.5em; 
+    }
+}
