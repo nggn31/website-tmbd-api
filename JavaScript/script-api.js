@@ -7,8 +7,6 @@ const API_URL = BASE_URL + '/discover/movie?sort_by-popularity.desc&' + API_KEY;
 const IMG_URL ='https://image.tmdb.org/t/p/w300';
 const searchURL = BASE_URL + '/search/movie?' + API_KEY;
 
-
-
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 
@@ -27,7 +25,6 @@ function showMovies(data){
 
     moviesContainer.innerHTML = ''; // Limpiar el contenedor de películas antes de agregar nuevas películas
 
-
     data.forEach(movie => {
         const {title, poster_path, vote_average, overview} = movie;
 
@@ -40,17 +37,6 @@ function showMovies(data){
         img.classList.add('box-img');
         img.src = `${IMG_URL}${poster_path}`;
         img.alt = title;
-
-        // Crear un elemento icono para el favorito
-        const favIcon = document.createElement('ion-icon');
-        favIcon.classList.add('box-fav');
-        favIcon.setAttribute('name', 'heart-outline');
-
-          // Agregar un evento de clic para activar la animación al hacer clic en el icono de favoritos
-          favIcon.addEventListener('click', () => {
-            favIcon.classList.toggle('active');
-            icon.classList.toggle('active');
-        });
 
         // Crear un elemento div para el contenido de la película
         const movieContent = document.createElement('div');
@@ -75,7 +61,7 @@ function showMovies(data){
         const overviewEl = document.createElement('p');
         overviewEl.textContent = overview;
 
-        // Truncar el texto del resumen para mostrar solo una parte de él
+        // Resume el texto
         const maxLength = 90; // Define la longitud máxima del texto del resumen
         const truncatedOverview = overview.length > maxLength ? overview.substring(0, maxLength) + '...' : overview;
         overviewEl.textContent = truncatedOverview;
@@ -86,12 +72,13 @@ function showMovies(data){
         movieContent.appendChild(overviewEl);
         
         movieEl.appendChild(img);
-        movieEl.appendChild(favIcon);
+     
         movieEl.appendChild(movieContent);
         
         moviesContainer.appendChild(movieEl); // Agregar el elemento de película al contenedor de películas
     });
 }
+
 
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
@@ -104,3 +91,6 @@ form.addEventListener('submit', (e) =>{
         getMovies(API_URL);
     }
 });
+
+
+    
