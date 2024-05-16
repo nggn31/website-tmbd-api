@@ -40,16 +40,6 @@ function showTVShows(data) {
     img.src = `${IMG_URL}${poster_path}`;
     img.alt = name;
 
-    // Crear un elemento icono para el favorito
-    const favIcon = document.createElement('ion-icon');
-    favIcon.classList.add('box-fav');
-    favIcon.setAttribute('name', 'heart-outline');
-
-    // Agregar un evento de clic para activar la animación al hacer clic en el icono de favoritos
-    favIcon.addEventListener('click', () => {
-      favIcon.classList.toggle('active');
-      icon.classList.toggle('active');
-    });
 
     // Crear un elemento div para el contenido de la película
     const showContent = document.createElement('div');
@@ -88,7 +78,6 @@ function showTVShows(data) {
     showContent.appendChild(overviewEl);
 
     showEl.appendChild(img);
-    showEl.appendChild(favIcon);
     showEl.appendChild(showContent);
 
     showsContainer.appendChild(showEl); // Agregar el elemento de película al contenedor de películas
